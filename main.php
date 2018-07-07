@@ -2,7 +2,8 @@
 	$threads = $bbj->thread_index();
 	foreach($threads["data"] as $thread) {
 		$username = $threads["usermap"][$thread["author"]]["user_name"];
-		$time = new DateTime("@{$thread['created']}");
+		$time = round($thread['created']);
+		$time = new DateTime("@{$time}");
 		$time = date_format($time, "c");
 		$tt = $thread["title"];
 		$plural = $thread['reply_count']==1 ? "y" : "ies";
