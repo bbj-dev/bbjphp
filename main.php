@@ -5,7 +5,7 @@
 		$last_author = $threads["usermap"][$thread["last_author"]]["user_name"];
 		$time = round($thread['created']);
 		$time = new DateTime("@{$time}");
-		$time = date_format($time, "c");
+		$time = date_format($time, "Y/m/d H:i");
 		$tt = $thread["title"];
 		$plural = $thread['reply_count']==1 ? "y" : "ies";
 		$tid = $thread["thread_id"];
