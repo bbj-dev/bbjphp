@@ -21,9 +21,9 @@
 	include 'client/header.php';
 
 	if (isset($thread)) {
-		include 'thread.php';
+		include 'client/thread.php';
 	} else {
-		include 'main.php';
+		include 'client/main.php';
 	}
 
 	include 'client/footer.php';
