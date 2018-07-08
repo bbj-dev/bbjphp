@@ -12,4 +12,3 @@
 		echo "\t\t</div>".PHP_EOL;
 	}
 ?>
-		<p>RIP</p>

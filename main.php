@@ -2,6 +2,7 @@
 	$threads = $bbj->thread_index();
 	foreach($threads["data"] as $thread) {
 		$username = $threads["usermap"][$thread["author"]]["user_name"];
+		$last_author = $threads["usermap"][$thread["last_author"]]["user_name"];
 		$time = round($thread['created']);
 		$time = new DateTime("@{$time}");
 		$time = date_format($time, "c");
@@ -14,4 +15,3 @@
 		echo "\t\t</div>".PHP_EOL;
 	}
 ?>
-		<p>RIP</p>
