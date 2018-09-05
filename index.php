@@ -8,7 +8,7 @@
 		if ($thread["error"]!=null) {
 			$title = "Unknown Thread | ~team BBJ";
 			include 'client/header.php';
-			echo "\t\t<p>No such thread exists. <a href='/index.php'>Go home.</a></p>";
+			echo "\t\t<p>No such thread exists. <a href='/'>Go home.</a></p>";
 			include 'client/footer.php';
 			die();
 		} else {

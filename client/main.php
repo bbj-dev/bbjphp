@@ -10,7 +10,7 @@
 		$plural = $thread['reply_count']==1 ? "y" : "ies";
 		$tid = $thread["thread_id"];
 		echo "\t\t<div class='well'>".PHP_EOL;
-		echo "\t\t\t<p><a href='index.php?thread_id={$tid}'>{$tt}</a> by {$username} @ {$time}</p>".PHP_EOL;
+		echo "\t\t\t<p><a href='?thread_id={$tid}'>{$tt}</a> by {$username} @ {$time}</p>".PHP_EOL;
 		echo "\t\t\t<p>{$thread['reply_count']} repl{$plural}, last post by {$last_author}";
 		echo "\t\t</div>".PHP_EOL;
 	}
