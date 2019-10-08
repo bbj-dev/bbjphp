@@ -1,5 +1,19 @@
 <?php
+	// Float pinned posts to the top.
+	// If they share a pinned/unpinned status, later post comes to the top.
+	// Otherwise, force pinned post to the top.
+	function pinned_sort($thread_a,$thread_b) {
+		if ($thread_a["pinned"]==$thread_b["pinned"]) {
+			return (($thread_a["created"]>$thread_b["created"])? -1 : 1);
+		}
+		if ($thread_a["pinned"]) {
+			return -1;
+		}
+		return 1;
+	}
+
 	$threads = $bbj->thread_index();
+	usort($threads["data"],"pinned_sort");
 	foreach($threads["data"] as $thread) {
 		$username = $threads["usermap"][$thread["author"]]["user_name"];
 		$last_author = $threads["usermap"][$thread["last_author"]]["user_name"];
