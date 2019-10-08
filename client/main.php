@@ -22,7 +22,7 @@
 		$time = date_format($time, "Y/m/d H:i");
 		$mod = round($thread['last_mod']);
 		$mod = new DateTime("@{$mod}");
-		$mod = date_format($time, "Y/m/d H:i");
+		$mod = date_format($mod, "Y/m/d H:i");
 		$tt = $thread["title"];
 		$plural = $thread['reply_count']==1 ? "y" : "ies";
 		$tid = $thread["thread_id"];
