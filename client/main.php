@@ -1,7 +1,8 @@
 <?php
-	// Float pinned posts to the top.
-	// If they share a pinned/unpinned status, later post comes to the top.
-	// Otherwise, force pinned post to the top.
+	// Sort the threads array so that pinned posts float to the top.
+	// If the threads share a pinned status (both pinned or both not),
+	// then the thread with the later creation time floats to the top.
+	// Otherwise, the pinned thread is forced to the top.
 	function pinned_sort($thread_a,$thread_b) {
 		if ($thread_a["pinned"] == $thread_b["pinned"]) {
 			return (($thread_a["last_mod"]>$thread_b["last_mod"])? -1 : 1);
